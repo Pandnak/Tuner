@@ -1,7 +1,19 @@
+'''
+!!!
+Run this line one time before run script:
 
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6 
+!!!
+'''
+
+
+'''   
 import kivy
 from kivy.app import App
 from kivy.uix.label import Label
+from kivy.uix.gridlayout import
+from kivy.uix.button import Button
+
 
 class MyApp(App):
     def build(self):
@@ -17,14 +29,29 @@ from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import StringProperty
 
-KV = """
-Label:
-    font_size: "25sp"
-    text: root.data_label
-"""
 
-class MyBL(BoxLayout):
-    data_label = StringProperty("Квадрат!")
+KV = """
+BoxLayout:
+    orientation: 'vertical'
+    Label:
+        text: 'Text'
+        font_size: '30sp'
+        size: self.texture_size
+    Button:
+        text: 'Start'
+        font_size: '30sp'
+        bold: True
+        background_color: '#00DDC3'
+        on_state:
+            print("Button_1 current state is {}".format(self.state))
+    Button:
+        text: 'Stop'
+        font_size: '30sp'
+        bold: True
+        background_color: '#00DDC3'
+        on_state:
+            print("Button_2 current state is {}".format(self.state))
+"""
 	
 class MyApp(App):
     running = True
@@ -36,6 +63,5 @@ class MyApp(App):
         self.running = False
 		
 if __name__ == "__main__":
-    MyApp().run()
-'''    
-    
+    MyApp().run() 
+
