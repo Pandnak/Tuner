@@ -1,28 +1,11 @@
 '''
-!!!
+----------------------------------------------------------
 Run this line one time before run script:
 
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6 
-!!!
+----------------------------------------------------------
 '''
 
-
-'''   
-import kivy
-from kivy.app import App
-from kivy.uix.label import Label
-from kivy.uix.gridlayout import
-from kivy.uix.button import Button
-
-
-class MyApp(App):
-    def build(self):
-        return Label(text = 'Ква-квадрат!')
-
-if __name__ == "__main__":
-    MyApp().run()
-
-'''
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.label import Label
